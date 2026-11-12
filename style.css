@@ -16,6 +16,12 @@
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* ===== PAGE SETTINGS ===== */
 html {
   scroll-behavior: smooth;
@@ -30,6 +36,7 @@ body {
   background: var(--bg);
   font-family: var(--font);
   line-height: 1.75;
+  overflow-x: hidden;
 }
 
 img {
@@ -91,7 +98,9 @@ summary:focus-visible {
 }
 
 #navbar ul a {
-  display: block;
+  display: flex;
+  min-height: 44px;
+  align-items: center;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
   font-size: 0.95rem;
@@ -173,6 +182,7 @@ figcaption {
 }
 
 h1 {
+  max-width: 100%;
   margin: 0;
   font-size: clamp(2.4rem, 7vw, 4.6rem);
   font-weight: 700;
@@ -645,6 +655,9 @@ footer p {
   }
 
   #navbar ul a {
+    display: grid;
+    min-height: 44px;
+    align-items: center;
     padding: 0.45rem 0.2rem;
     font-size: 0.82rem;
     text-align: center;
@@ -663,6 +676,7 @@ footer p {
   h1 {
     font-size: clamp(2rem, 8vw, 2.6rem);
     letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
   }
 
   .tagline {
@@ -674,12 +688,14 @@ footer p {
   }
 
   .actions {
+    width: 100%;
     gap: 0.6rem;
     margin: 1.5rem 0;
   }
 
   .btn {
     display: inline-flex;
+    flex: 1 1 10rem;
     min-height: 44px;
     align-items: center;
     justify-content: center;
@@ -716,11 +732,13 @@ footer p {
   .table-wrap {
     max-width: 100%;
     min-width: 0;
+    padding-bottom: 0.25rem;
     -webkit-overflow-scrolling: touch;
   }
 
   table {
-    min-width: 36rem;
+    min-width: 34rem;
+    font-size: 0.95rem;
   }
 
   .palette {
@@ -729,7 +747,14 @@ footer p {
   }
 
   .palette span::after {
-    display: none; /* the color codes are too small on tiny screens */
+    display: block;
+    max-width: 100%;
+    opacity: 1;
+    padding: 0 0.15rem;
+    font-size: 0.65rem;
+    line-height: 1.1;
+    text-align: center;
+    overflow-wrap: anywhere;
   }
 }
 
