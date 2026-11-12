@@ -3,7 +3,7 @@
 > A responsive, single-page student portfolio built with semantic HTML and modern CSS.
 
 <p align="center">
-  <img src="images/profile_new.png" alt="Jacken Mendoza" width="180">
+  <img src="images/profile.png" alt="Jacken Mendoza" width="180">
 </p>
 
 <p align="center">
@@ -86,7 +86,7 @@ Mendoza-Jacken-ITC-Webpage/
 ├── index.html              # Page content and semantic structure
 ├── style.css               # Theme, layout, responsive rules, and animations
 ├── images/
-│   └── profile_new.png     # Profile photo used in the hero section
+│   └── profile.png         # Profile photo used in the hero section
 └── README.md               # Project documentation
 ```
 
@@ -116,7 +116,7 @@ The stylesheet is organized in layers:
 
 Edit the text and links in [index.html](index.html). The most common updates are:
 
-- Replace the profile image path or `alt` text.
+- Replace the profile image or `alt` text.
 - Update the hero introduction and navigation labels.
 - Add or remove interests, schedule rows, skills, and goals.
 - Change the GitHub profile URL.
