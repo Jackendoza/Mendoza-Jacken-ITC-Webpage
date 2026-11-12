@@ -639,14 +639,23 @@ footer p {
   }
 
   #navbar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: 0.35rem;
     padding: 0.55rem 0.65rem;
     border-radius: 20px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .brand {
+    flex: 0 0 auto;
   }
 
   #navbar ul {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    order: initial;
+    width: auto;
+    flex-wrap: nowrap;
     gap: 0.15rem;
   }
 
