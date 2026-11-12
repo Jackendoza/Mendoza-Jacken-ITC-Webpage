@@ -31,13 +31,13 @@ The page is intentionally lightweight: it uses only HTML and CSS, so it can be o
 
 The design uses a calm, Coolors-inspired palette:
 
-| Color | Role | Hex |
-| --- | --- | --- |
-| Navy | Primary text and contrast | `#0A1A2F` |
-| Blue | Links, actions, and emphasis | `#0066FF` |
-| Sky blue | Supporting accent | `#38A3FF` |
-| Teal | Secondary accent | `#2EC4B6` |
-| Mint | Soft palette finish | `#9BE8C8` |
+| Color     | Role                             | Hex       |
+| --------- | -------------------------------- | --------- |
+| Navy      | Primary text and contrast        | `#0A1A2F` |
+| Blue      | Links, actions, and emphasis     | `#0066FF` |
+| Sky blue  | Supporting accent                | `#38A3FF` |
+| Teal      | Secondary accent                 | `#2EC4B6` |
+| Mint      | Soft palette finish              | `#9BE8C8` |
 | Off-white | Surfaces and section backgrounds | `#F3F6FB` |
 
 ### Content sections
@@ -171,3 +171,5 @@ Built with:
 ## License
 
 This is a personal educational project. The content and profile image are intended for this project and should not be reused without permission.
+
+Claude Made this README.md with the help of my prompting.
