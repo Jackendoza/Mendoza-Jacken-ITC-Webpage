@@ -761,7 +761,7 @@ footer p {
     background: var(--tint);
   }
 
-  .nav-toggle:checked ~ .nav-panel ul a {
+  #navbar .nav-toggle:checked ~ .nav-panel ul a {
     opacity: 1;
     transform: translateX(0);
   }
