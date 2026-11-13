@@ -21,7 +21,7 @@
 
 ## About the project
 
-This website is Jacken Ismael C. Mendoza's personal **CS101 final project** for Bicol University College of Science. It introduces Jacken as a first-year BS Computer Science student and presents his interests, weekly schedule, journey into computing, developing skills, future goals, and personal reflection.
+This website is Jacken Ismael C. Mendoza's personal **CS101 final project** for Bicol University College of Science. It introduces Jacken as a first-year BS Computer Science student and presents his interests, journey into computing, developing skills, future goals, and personal reflection.
 
 The page is intentionally lightweight: it uses only HTML and CSS, so it can be opened locally without installing packages, configuring a build tool, or running a backend.
 
@@ -45,7 +45,7 @@ The design uses a calm, Coolors-inspired palette:
 The sticky navigation provides quick access to:
 
 - **Hello** — quick facts and a personal summary
-- **About** — interests, a typical weekly schedule, and conversation topics
+- **About** — interests and conversation topics
 - **My Path** — the story behind choosing Computer Science
 - **Skills** — favorite website and current technical skills
 - **Goals** — academic, career, and family goals
@@ -53,10 +53,9 @@ The sticky navigation provides quick access to:
 
 ### Responsive and accessible by default
 
-- Uses semantic elements including `nav`, `header`, `main`, `section`, `figure`, `table`, `details`, and `footer`.
+- Uses semantic elements including `nav`, `header`, `main`, `section`, `figure`, `details`, and `footer`.
 - Includes descriptive image alternative text, a page description, keyboard focus outlines, and a labeled navigation landmark.
 - Uses responsive breakpoints for tablets and phones.
-- Keeps the schedule inside a horizontally scrollable wrapper on narrow screens.
 - Respects `prefers-reduced-motion` by disabling animations for visitors who request less motion.
 - Uses a system-font stack, so there are no external font requests.
 
@@ -97,7 +96,7 @@ index.html
     │
     ├── Sticky navigation ── jumps to section IDs
     ├── Hero ─────────────── profile, introduction, actions, trait palette
-    └── Main content ─────── facts, interests, schedule, path, skills, goals
+    └── Main content ─────── facts, interests, path, skills, goals
              │
              └── style.css ── tokens → layout → components → responsive rules
 ```
@@ -118,7 +117,7 @@ Edit the text and links in [index.html](index.html). The most common updates are
 
 - Replace the profile image or `alt` text.
 - Update the hero introduction and navigation labels.
-- Add or remove interests, schedule rows, skills, and goals.
+- Add or remove interests, skills, and goals.
 - Change the GitHub profile URL.
 - Update the footer course or school information.
 
@@ -153,7 +152,6 @@ Before publishing a customized version:
 - [ ] Check every navigation link and external URL.
 - [ ] Confirm the profile image still loads and has useful alternative text.
 - [ ] Test the page at desktop, tablet, and phone widths.
-- [ ] Verify the schedule can scroll horizontally on a small screen.
 - [ ] Tab through the page to confirm focus indicators are visible.
 - [ ] Check the page with reduced motion enabled.
 - [ ] Proofread personal details, spelling, and course information.

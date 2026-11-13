@@ -409,40 +409,6 @@ blockquote {
   box-shadow: 0 10px 22px rgba(10, 26, 47, 0.08);
 }
 
-/* ===== SCHEDULE TABLE ===== */
-.table-wrap {
-  overflow-x: auto; /* the table scrolls inside its box on small phones */
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse; /* removes gaps between cells */
-  text-align: left;
-}
-
-caption {
-  padding-bottom: 0.5rem;
-  text-align: left;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-th {
-  padding: 0.6rem 0.8rem 0.6rem 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-  border-bottom: 1px solid var(--text);
-}
-
-td {
-  padding: 0.8rem 0.8rem 0.8rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-tr:hover td {
-  background: var(--soft);
-}
-
 /* "Ask me about" box: opens when you click it */
 .more {
   margin-top: 2rem;
@@ -727,18 +693,6 @@ footer p {
 
   .cards li {
     padding: 0.85rem 1rem;
-  }
-
-  .table-wrap {
-    max-width: 100%;
-    min-width: 0;
-    padding-bottom: 0.25rem;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  table {
-    min-width: 34rem;
-    font-size: 0.95rem;
   }
 
   .palette {
