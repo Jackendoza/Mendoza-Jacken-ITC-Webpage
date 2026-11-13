@@ -19,14 +19,25 @@
     <!-- NAVIGATION BAR: a floating bar. Each link jumps to the section with the same id -->
     <nav id="navbar" aria-label="Page sections">
         <a class="brand" href="#top">Jacken</a>
-        <ul>
-            <li><a href="#hello">Hello</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#path">My Path</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#goals">Goals</a></li>
-            <li><a href="#reflection">Reflection</a></li>
-        </ul>
+        <input class="nav-toggle" type="checkbox" id="nav-toggle">
+        <label class="menu-toggle" for="nav-toggle">
+            <span class="menu-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+            <span class="menu-label">Menu</span>
+        </label>
+        <div class="nav-panel">
+            <ul>
+                <li><a href="#hello">Hello</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#path">My Path</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#reflection">Reflection</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- TOP PART (hero): photo, name, tagline, short introduction, buttons, and a color strip -->
