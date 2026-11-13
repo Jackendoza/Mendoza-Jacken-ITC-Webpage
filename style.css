@@ -728,6 +728,35 @@ footer p {
       color 0.2s;
   }
 
+  #navbar .nav-panel li:nth-child(1) a {
+    color: #0a2a4a;
+  }
+
+  #navbar .nav-panel li:nth-child(2) a {
+    color: #0066ff;
+  }
+
+  #navbar .nav-panel li:nth-child(3) a {
+    color: #168bd0;
+  }
+
+  #navbar .nav-panel li:nth-child(4) a {
+    color: #168f83;
+  }
+
+  #navbar .nav-panel li:nth-child(5) a {
+    color: #1b8c5a;
+  }
+
+  #navbar .nav-panel li:nth-child(6) a {
+    color: #0d6b52;
+  }
+
+  #navbar .nav-panel ul a:hover {
+    color: #fff;
+    background: var(--blue);
+  }
+
   .nav-toggle:checked ~ .nav-panel ul a {
     opacity: 1;
     transform: translateX(0);
