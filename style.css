@@ -893,10 +893,30 @@ footer a {
     object-position: center;  /* centred in the box */
   }
 
-  /* Traits strip takes full width */
+  /* Traits strip — taller so all five labels can be read at once */
   .palette {
-    height: 56px;
+    height: 90px;         /* enough room for two-line labels */
     border-radius: 12px;
+  }
+
+  /* On touch screens there is no hover, so show all labels permanently */
+  .palette span::after {
+    opacity: 1;           /* always visible on mobile */
+    font-size: 0.6rem;    /* small enough to fit inside each equal bar */
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.25;
+    padding: 0 0.2rem;
+    word-break: break-word;    /* let long words wrap rather than overflow */
+    overflow-wrap: break-word;
+    max-width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  /* Disable the hover-expand animation on touch — all bars stay equal */
+  .palette span:hover {
+    flex: 1;
   }
 
   .traits-label {
