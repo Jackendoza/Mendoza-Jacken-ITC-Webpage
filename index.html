@@ -1,207 +1,352 @@
 <!DOCTYPE html>
 <!--
-  CS101 FINAL PROJECT - Jacken's About Me page (Coolors-inspired minimalist version)
-  Folder: Mendoza_Jacken | Pure HTML and CSS, no JavaScript, no frameworks
-  Layout: Flexbox for the navbar and hero, Grid for the sections (see style.css)
+  CS101 FINAL PROJECT — Jacken Mendoza's About Me page
+  Folder : Mendoza_Jacken
+  Rules  : Pure HTML + CSS only. No JavaScript, no frameworks, no libraries.
+  Layout : CSS Grid for the hero (two columns → one column under 700 px).
+           Flexbox only for small rows like the navbar and buttons.
 -->
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jacken Mendoza, a first-year BSCS student at Bicol University.">
-    <title>Jacken Mendoza | About Me</title>
-    <!-- Connects this page to its CSS file -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jacken Mendoza — first-year BSCS student at Bicol University.">
+  <title>Jacken Mendoza | About Me</title>
+  <!-- Connects this page to its CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <!-- NAVIGATION BAR: a floating bar. Each link jumps to the section with the same id -->
-    <nav id="navbar" aria-label="Page sections">
-        <a class="brand" href="#top">Jacken</a>
-        <input class="nav-toggle" type="checkbox" id="nav-toggle">
-        <label class="menu-toggle" for="nav-toggle">
-            <span class="menu-icon" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-            <span class="menu-label">Menu</span>
-        </label>
-        <label class="nav-backdrop" for="nav-toggle" aria-hidden="true"></label>
-        <div class="nav-panel">
-            <ul>
-                <li><a href="#hello">Hello</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#path">My Path</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#goals">Goals</a></li>
-                <li><a href="#reflection">Reflection</a></li>
-            </ul>
-        </div>
-    </nav>
+<body id="top">
 
-    <!-- TOP PART (hero): photo, name, tagline, short introduction, buttons, and a color strip -->
-    <header id="top">
-        <!-- Profile photo -->
-        <figure class="photo">
-            <img src="images/profile.png" alt="Jacken Mendoza profile photo">
-            <figcaption>Photo by Jacken Mendoza.</figcaption>
-        </figure>
-        <h1>Jacken Ismael C. Mendoza</h1>
-        <p class="tagline">Your Nerdy Computer Science Student from 1A</p>
-        <p class="intro">Welcome to my page! I am a first-year Computer Science student who loves coding, comic books,
-            and sports, and this page shows who I am and where I want to go.</p>
-        <div class="actions">
-            <a class="btn" href="#about">Meet me</a>
-            <a class="btn ghost" href="#goals">See my goals</a>
-        </div>
-        <!-- Decorative color strip: the bars grow when you hover over them -->
-        <div class="palette" aria-hidden="true">
-            <span data-hex="Geeky Person"></span>
-            <span data-hex="Socially Inclined"></span>
-            <span data-hex="Loving"></span>
-            <span data-hex="Respectful"></span>
-            <span data-hex="Fun"></span>
-        </div>
-        <p>Traits About Me!</p>
-    </header>
+  <!-- =====================================================================
+       NAVIGATION BAR
+       Sticky at the top. Each link jumps to the matching section id.
+       Flexbox keeps the brand and links on one row.
+  ====================================================================== -->
+  <nav id="navbar" aria-label="Page sections">
+    <a class="brand" href="#top">Jacken</a>
+    <ul>
+      <li><a href="#hello">Hello</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#path">My Path</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#reflection">Reflection</a></li>
+    </ul>
+  </nav>
 
-    <!-- MAIN PART: each section has its title on the left and its content on the right -->
-    <main>
+  <!-- =====================================================================
+       HERO / HEADER
+       CSS Grid: photo on the left (rectangular, full height), text on the right.
+       Collapses to one column on screens narrower than 700 px.
+  ====================================================================== -->
+  <header id="hello-hero">
 
-        <!-- HELLO -->
-        <section id="hello" class="panel">
-            <h2>Hello!</h2>
-            <p>Hi, I am Jacken. Here are the quick facts about me:</p>
-            <!-- dl = a list of terms (dt) and their details (dd) -->
-            <dl class="facts">
-                <dt>Preferred name</dt>
-                <dd>Jack</dd>
-                <dt>Program</dt>
-                <dd>BS Computer Science (BSCS)</dd>
-                <dt>Year level</dt>
-                <dd>First year, 1A</dd>
-                <dt>School</dt>
-                <dd>Bicol University College of Science</dd>
-            </dl>
-            <!-- blockquote = a quote, here my one-sentence summary -->
-            <blockquote>I am a curious first-year Computer Science student who loves to code, collect, compete on
-                events, and to socialize with peeps.
-            </blockquote>
-        </section>
+    <!-- Left column: profile photo — rectangular, cropped to fill the hero height -->
+    <figure class="photo">
+      <img src="images/profile.png" alt="Jacken Mendoza profile photo">
+      <figcaption>Photo by Jacken Mendoza.</figcaption>
+    </figure>
 
-        <!-- ABOUT ME -->
-        <section id="about" class="panel">
-            <h2>About Me</h2>
-            <p>When I am not writing code, I like to stay active and keep my mind busy. I read comic books because I
-                am fond of the stories I enjoyed growing up as a kid who loved the films. I also collect vintage nerdy
-                items,
-                such as action figures and vintage trading cards. They are fun to look at, and every piece has its own
-                story. To stay fit, I also used to participate in competitive swimming, and I play all kinds of sports
-                like pickleball or basketball with friends.</p>
+    <!-- Right column: name, tagline, intro, buttons, traits strip -->
+    <div class="hero-text">
+      <h1>Jacken Ismael C. Mendoza</h1>
+      <!-- Updated tagline -->
+      <p class="tagline">Hi, I'm Jacken, a nerdy CS student from 1A.</p>
+      <p class="intro">
+        Welcome to my page! I am a first-year Computer Science student who loves coding,
+        comic books, and sports. This page shows who I am and where I want to go.
+      </p>
 
-            <h3>My Interests</h3>
-            <!-- ul = bullet list, styled as small tiles -->
-            <ul class="cards">
-                <li>Reading comic books</li>
-                <li>Collecting vintage nerdy stuff</li>
-                <li>Swimming</li>
-                <li>Playing all kinds of sports</li>
-                <li>Coding and programming</li>
-            </ul>
+      <!-- Buttons: "Meet me" = filled, "See my goals" = outline ghost -->
+      <div class="actions">
+        <a class="btn" href="#about">Meet me</a>
+        <a class="btn btn-ghost" href="#goals">See my goals</a>
+      </div>
 
-            <!-- details and summary = a box that opens when you click it -->
-            <details class="more">
-                <summary>Ask me about...</summary>
-                <ul>
-                    <li>My favorite comic books</li>
-                    <li>My vintage collection</li>
-                    <li>Swimming and sports</li>
-                    <li>Learning to code</li>
-                </ul>
-            </details>
-        </section>
+      <!-- Small label above the traits palette strip -->
+      <p class="traits-label">Traits About Me!</p>
+      <!-- Coolors-style color bars: each one expands on hover and shows the trait label -->
+      <div class="palette" aria-hidden="true">
+        <span data-trait="Geeky Person"></span>
+        <span data-trait="Socially Inclined"></span>
+        <span data-trait="Loving"></span>
+        <span data-trait="Respectful"></span>
+        <span data-trait="Fun"></span>
+      </div>
+    </div>
 
-        <!-- MY PATH INTO COMPUTING -->
-        <section id="path" class="panel">
-            <h2>My Path into Computing</h2>
-            <p>Coding and programming is all I have ever wanted to do. I like solving problems on a computer because
-                every problem is a small challenge, and finishing it feels great. Studying Computer Science lets me
-                learn how software really works, so I can build useful things on my own. That is why I chose BSCS at
-                Bicol University.</p>
-            <!-- ol = numbered list, used here because these steps happen in order -->
-            <ol class="steps">
-                <li><strong>I fell in love with coding.</strong> Writing code became the thing I wanted to do most.
-                </li>
-                <li><strong>Problems kept me motivated.</strong> Solving them on a computer challenged me again and
-                    again.</li>
-                <li><strong>I chose Computer Science.</strong> Now I am learning the skills to build what I imagine.
-                </li>
-            </ol>
-        </section>
+  </header>
 
-        <!-- FAVORITES AND SKILLS -->
-        <section id="skills" class="panel">
-            <h2>Favorites and Skills</h2>
-            <h3>My Favorite Website</h3>
-            <p>My favorite website is <a href="https://github.com/Jackendoza" target="_blank" rel="noopener">GitHub</a>.
-                It is where I keep my personal projects. As a Computer Science student,
-                I love that it turns my school coding work into a portfolio that anyone can see.</p>
+  <!-- =====================================================================
+       MAIN CONTENT
+       Each <section> has an id that matches the navbar link.
+  ====================================================================== -->
+  <main>
 
-            <h3>Skills I Am Building</h3>
-            <ul class="tags">
-                <li>HTML and CSS</li>
-                <li>C programming</li>
-                <li>Python</li>
-                <li>GitHub</li>
-                <li>Next up: Backend Tools</li>
-            </ul>
-        </section>
+    <!-- ==================================================================
+         HELLO — quick facts cards using <dl>, plus a short blockquote.
+    =================================================================== -->
+    <section id="hello" class="panel">
+      <h2>Hello!</h2>
 
-        <!-- GOALS -->
-        <section id="goals" class="panel">
-            <h2>Goals</h2>
-            <p>Here are the three goals I am working toward in the next few years.</p>
-            <ol class="steps">
-                <li><strong>Graduate with a Computer Science degree.</strong> I will study hard and keep learning new
-                    things every semester.</li>
-                <li><strong>Work at a big tech company.</strong> I want to build software that many people use and
-                    learn from great engineers.</li>
-                <li><strong>Help my family retire as early as possible.</strong> This is my biggest reason for working
-                    hard, and it keeps me going on tough days.</li>
-            </ol>
-        </section>
+      <div class="panel-body">
+        <!-- Small label above the facts grid -->
+        <p class="label">Quick facts</p>
 
-        <!-- REFLECTION -->
-        <section id="reflection" class="panel">
-            <h2>Reflection</h2>
-            <p>1. <strong>What was easy?</strong>
-                Writing the HTML was the easiest part for me. Headings, lists, and tables were easy
-                to learn because each tag shows what it is for. Linking my CSS file and changing colors and fonts
-                was easy too. I liked seeing the page change right after I saved my work.</p>
+        <!-- dl = description list; each dt+dd pair sits in its own card div -->
+        <dl class="facts">
+          <div class="fact-card">
+            <dt>Preferred name</dt>
+            <dd>Jack</dd>
+          </div>
+          <div class="fact-card">
+            <dt>Program</dt>
+            <dd>BS Computer Science (BSCS)</dd>
+          </div>
+          <div class="fact-card">
+            <dt>Year level</dt>
+            <dd>First year, 1A</dd>
+          </div>
+          <div class="fact-card">
+            <dt>School</dt>
+            <dd>Bicol University College of Science</dd>
+          </div>
+        </dl>
 
-            <p>2. <strong>What was confusing?</strong>
-                The layout was the most confusing part, mostly putting my photo on the right side. My first try used big
-                fixed sizes, so it looked okay on my screen but could look bad on other screens. I also did not know
-                when to use float, grid, or flexbox, because they can all put things side by side. Making the line
-                under the navbar match the line under my name was hard too.</p>
+        <!-- blockquote = a one-sentence summary of who I am -->
+        <blockquote>
+          I am a curious first-year Computer Science student who loves to code,
+          collect, compete in events, and socialise with people.
+        </blockquote>
+      </div>
+    </section>
 
-            <p>3. <strong>What is one thing you would improve?</strong>
-                I would make my page look better on phones and small screens. I added a rule that puts everything in
-                one column, but I want to test it on more devices. I would also fix small spelling mistakes
-                like spelling mistakes in the title. Later, I want to learn JavaScript so I can add more cool things to
-                my
-                page.</p>
-        </section>
-    </main>
+    <!-- ==================================================================
+         ABOUT ME — interests list (one list, not repeated), and
+         an expandable "Ask me about" box with nested topic details.
+    =================================================================== -->
+    <section id="about" class="panel">
+      <h2>About Me</h2>
 
-    <!-- BOTTOM PART -->
-    <footer>
-        <p>Made by Jacken Ismael C. Mendoza for CS101, Bicol University.</p>
-        <p><a href="../../index.html">Back to Home</a></p>
-        <p>Xiuxiu</p>
-    </footer>
+      <div class="panel-body">
+        <p>
+          When I am not writing code, I like to stay active and keep my mind busy.
+          I read comic books because I am fond of the stories I enjoyed growing up as a
+          kid who loved the films. I also collect vintage nerdy items, such as action
+          figures and vintage trading cards — every piece has its own story. To stay fit,
+          I used to participate in competitive swimming, and I play all kinds of sports
+          like pickleball or basketball with friends.
+        </p>
+
+        <h3>My Interests</h3>
+        <!-- ul styled as small hover-lift tiles -->
+        <ul class="cards">
+          <li>Reading comic books</li>
+          <li>Collecting vintage nerdy stuff</li>
+          <li>Swimming</li>
+          <li>Playing all kinds of sports</li>
+          <li>Coding and programming</li>
+        </ul>
+
+        <!-- details + summary = a collapsible box, no JavaScript needed.
+             Each topic inside is also a <details> so it opens individually. -->
+        <details class="more">
+          <summary>Ask me about…</summary>
+
+          <ul class="ask-list">
+
+            <!-- Topic 1 -->
+            <li>
+              <details class="ask-item">
+                <summary>My Favorite Comic Books</summary>
+                <p>I love <em>Watchmen</em>, <em>Mister Miracle</em>, and
+                   <em>Astonishing X-Men</em> (Joss Whedon). Great stories, great art!</p>
+              </details>
+            </li>
+
+            <!-- Topic 2 -->
+            <li>
+              <details class="ask-item">
+                <summary>My Vintage Collection</summary>
+                <p>I collect mainly the 90's <em>Marvel Masterpieces</em> trading card
+                   series, and also the new DC McFarlane line of toys!</p>
+              </details>
+            </li>
+
+            <!-- Topic 3 -->
+            <li>
+              <details class="ask-item">
+                <summary>Swimming and Sports</summary>
+                <p>I did competitive swimming, but I also play almost all sports —
+                   pickleball, basketball, badminton, volleyball, and others.</p>
+              </details>
+            </li>
+
+            <!-- Topic 4 -->
+            <li>
+              <details class="ask-item">
+                <summary>Learning to Code</summary>
+                <p>I really love coding and programming — it is the reason why I got into
+                   Computer Science in the first place!</p>
+              </details>
+            </li>
+
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         MY PATH — a vertical timeline with a thin line and a dot per step.
+    =================================================================== -->
+    <section id="path" class="panel">
+      <h2>My Path</h2>
+
+      <div class="panel-body">
+        <p>
+          Coding and programming is what I have always wanted to do. I like solving
+          problems on a computer because every problem is a small challenge, and finishing
+          it feels great. Studying Computer Science lets me learn how software really
+          works, so I can build useful things on my own. That is why I chose BSCS at
+          Bicol University.
+        </p>
+
+        <!-- ol styled as a vertical timeline -->
+        <ol class="timeline">
+          <li>
+            <strong>I fell in love with coding.</strong>
+            Writing code became the thing I wanted to do most.
+          </li>
+          <li>
+            <strong>Problems kept me motivated.</strong>
+            Solving them on a computer challenged me again and again.
+          </li>
+          <li>
+            <strong>I chose Computer Science.</strong>
+            Now I am learning the skills to build what I imagine.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         SKILLS — pill-shaped tags. The last tag has a dashed outline
+         because it is a skill I have not learned yet.
+    =================================================================== -->
+    <section id="skills" class="panel">
+      <h2>Skills</h2>
+
+      <div class="panel-body">
+        <h3>My Favorite Website</h3>
+        <p>
+          My favorite website is
+          <a href="https://github.com/Jackendoza" target="_blank" rel="noopener">GitHub</a>.
+          It is where I keep my personal projects. As a Computer Science student,
+          I love that it turns my school coding work into a portfolio anyone can see.
+        </p>
+
+        <h3>Skills I Am Building</h3>
+        <!-- Pill tags; the last one uses a dashed border = not learned yet -->
+        <ul class="tags">
+          <li>HTML and CSS</li>
+          <li>C programming</li>
+          <li>Python</li>
+          <li>GitHub</li>
+          <li class="tag-upcoming">Next up: Backend Tools</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         GOALS — three numbered cards side by side, each with a big number.
+    =================================================================== -->
+    <section id="goals" class="panel">
+      <h2>Goals</h2>
+
+      <div class="panel-body">
+        <p>Here are the three goals I am working toward in the next few years.</p>
+
+        <!-- Goal cards in a CSS Grid — auto-fit so they wrap on phones -->
+        <ol class="goal-cards">
+          <li class="goal-card">
+            <span class="goal-num" aria-hidden="true">01</span>
+            <strong>Graduate with a Computer Science degree.</strong>
+            <p>I will study hard and keep learning new things every semester.</p>
+          </li>
+          <li class="goal-card">
+            <span class="goal-num" aria-hidden="true">02</span>
+            <strong>Work at a big tech company.</strong>
+            <p>I want to build software that many people use and learn from great engineers.</p>
+          </li>
+          <li class="goal-card">
+            <span class="goal-num" aria-hidden="true">03</span>
+            <strong>Help my family retire as early as possible.</strong>
+            <p>This is my biggest reason for working hard, and it keeps me going on tough days.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         REFLECTION — each question is a <details> that opens on click.
+         Fixed the sentence that said "spelling mistakes like spelling mistakes
+         in the title".
+    =================================================================== -->
+    <section id="reflection" class="panel">
+      <h2>Reflection</h2>
+
+      <div class="panel-body">
+
+        <!-- Question 1 -->
+        <details class="reflect">
+          <summary>What was easy?</summary>
+          <p>
+            Writing the HTML was the easiest part for me. Headings, lists, and tables
+            were easy to learn because each tag shows what it is for. Linking my CSS file
+            and changing colors and fonts was easy too. I liked seeing the page change
+            right after I saved my work.
+          </p>
+        </details>
+
+        <!-- Question 2 -->
+        <details class="reflect">
+          <summary>What was confusing?</summary>
+          <p>
+            The layout was the most confusing part, mostly placing my photo on the right
+            side. My first try used big fixed sizes, so it looked okay on my screen but
+            could look bad on other screens. I also did not know when to use float, grid,
+            or flexbox, because they can all put things side by side. Making the line
+            under the navbar match the line under my name was hard too.
+          </p>
+        </details>
+
+        <!-- Question 3 — fixed the broken sentence about "spelling mistakes" -->
+        <details class="reflect">
+          <summary>What is one thing you would improve?</summary>
+          <p>
+            I would make my page look better on phones and small screens. I added a rule
+            that puts everything in one column, but I want to test it on more devices.
+            I would also fix small typos and grammar errors I missed during proofreading.
+            Later, I want to learn JavaScript so I can add more cool things to my page.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       Changed "Back to Home" → "Back to top" (#top).
+       Removed stray word "Xiuxiu".
+  ====================================================================== -->
+  <footer>
+    <p>Made by Jacken Ismael C. Mendoza for CS101, Bicol University.</p>
+    <p><a href="#top">Back to top ↑</a></p>
+  </footer>
+
 </body>
-
 </html>
