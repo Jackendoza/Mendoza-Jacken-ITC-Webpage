@@ -879,11 +879,18 @@ footer a {
     max-width: 100%;
   }
 
-  /* Wide rectangle capped at 320 px */
+  /* Photo: natural height so the full picture is visible, no cropping */
   .photo {
-    width: min(90%, 320px);
-    height: 220px;
+    width: min(80%, 280px);   /* slightly wider so the face isn't too small */
+    height: auto;             /* let the image dictate the height — no crop */
     align-self: auto;
+  }
+
+  /* Show the full image — object-contain fits everything inside the box */
+  .photo img {
+    height: auto;             /* natural height, not stretched */
+    object-fit: contain;      /* whole picture visible, no clipping */
+    object-position: center;  /* centred in the box */
   }
 
   /* Traits strip takes full width */
